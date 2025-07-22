@@ -12,7 +12,7 @@ jobs:
 
     permissions:
       contents: read
-      packages: write  # Required to push to GitHub Container Registry
+      packages: write  # Needed for pushing to GHCR
 
     steps:
       - name: Checkout code
@@ -38,4 +38,3 @@ jobs:
         run: |
           docker build -t ghcr.io/${{ github.actor }}/springboot-multimodule-api:latest ./api
           docker push ghcr.io/${{ github.actor }}/springboot-multimodule-api:latest
-
